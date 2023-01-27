@@ -3,6 +3,12 @@
 
 #include <stdlib.h>
 #include <stdarg.h>
+#include <stdio.h>
+#include <unistd.h>
+
+#define UNUSED(x) (void)(x)
+#define BUFF_SIZE 1024
+
 /**
  * struct flags - struct containing flags to "turn on"
  * when a flag specifier is passed to _printf()
@@ -49,4 +55,5 @@ int print_bigS(va_list l, flags_t *f);
 int print_address(va_list l, flags_t *f);
 int print_percent(va_list l, flags_t *f);
 int print_rev(va_list l, flags_t *f);
+int get_width(const char *format, int *i, va_list list);
 #endif
